@@ -20,10 +20,23 @@ const register = async (req, res) => {
     if (userExists) {
       return GenerateResponse(res, 400, {}, 'User Already Exists')
     }
+
     const user = await User.create({ userName, password })
+    // create response with user data excluding password
+    const response = {
+      _id: user._id,
+      userName: user.userName,
+      createdAt: user.createdAt,
+      updatedAt: user.updatedAt,
+    }
 
     if (user) {
-      return GenerateResponse(res, 200, { user }, 'User Created Successfully')
+      return GenerateResponse(
+        res,
+        200,
+        { response },
+        'User Created Successfully'
+      )
     }
     return GenerateResponse(res, 400, {}, 'Unable to Create User')
   } catch (error) {

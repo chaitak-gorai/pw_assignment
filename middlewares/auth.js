@@ -19,7 +19,8 @@ export const Auth = async (req, res, next) => {
 
     const user = await User.findById(userCreds.id)
 
-    if (!user) return GenerateResponse(res, 400, {}, 'User not found')
+    if (!user)
+      return GenerateResponse(res, 400, {}, 'User not found, Check Auth Token')
 
     req.body.user = user
 

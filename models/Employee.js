@@ -11,7 +11,7 @@ const EmployeeSchema = mongoose.Schema(
       required: true,
     },
     currency: {
-      type: Number,
+      type: String,
     },
     department: {
       type: String,
