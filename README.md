@@ -66,21 +66,21 @@ Note: You Must Have Postman Desktop CLient or any other API running client
   https://www.postman.com/bold-desert-26005/workspace/pw/collection/24415798-bc63e766-7274-4901-88b2-b74e853855c8?action=share&creator=24415798
   ```
 - File Structure in Workspace
-  ![image](https://github.com/chaitak-gorai/pw_assignment/assets/77141674/b74e2a59-d9e2-4632-aece-1efbab4e2df2)
+  ![image](assets/1.png)
   
   Here we have `user` and `employee` section. The user seciton will be used to login and register the admin and the employee section have all the routes for the assignment.
 
   Click on the collection name ie `PW_assignment` to get into overview. Move to `Variables` tab to check the `LOCAL_URL` and `TOKEN`.
-  ![image](https://github.com/chaitak-gorai/pw_assignment/assets/77141674/a51f2524-905f-40f1-ae78-cba96e229792)
+  ![image](assets/3.png)
 
 
 - Register User
   Create a user by hitting the route `http://localhost:3000/user/register` as `POST` request and with `userName` and `password` as JSON in body as shown in the image below.
-  ![image](https://github.com/chaitak-gorai/pw_assignment/assets/77141674/e9e194b3-e09a-4fed-9204-2597f9ab238e)
+  ![image](assets/2.png)
 
 - Login User
   Similaryly Login the user with the login route as shown in the image.
-  ![image](https://github.com/chaitak-gorai/pw_assignment/assets/77141674/af3ef483-41bd-4a4d-807f-ef9d3faf5760)
+  ![image](assets/4.png)
 
   You will recieve an authorization token. Here i have used `JWT` Token.
   Copy the token and put into `Varibales` of the collection. This will be required to access further API's.
@@ -96,18 +96,18 @@ Note: You Must Have Postman Desktop CLient or any other API running client
   
 ## Task 1: An API to add a new record to the dataset.
 Move inside the employee seciton and use the `addEmployee` route to add a employe with details.
-![image](https://github.com/chaitak-gorai/pw_assignment/assets/77141674/dd2c51b5-0523-4935-8ccb-3f3ad8301bb0)
+![image](assets/5.png)
 
 You can get all Employees by using the `/employee/all` route.
 Here, the initial json data is already added to the database.
 
 ## Task 2: An API to delete a new record to the dataset.
 To delete a employee use the `employee/remove` route. Provide the id in the body of the request.
-![image](https://github.com/chaitak-gorai/pw_assignment/assets/77141674/9709184e-f423-4e03-86bc-dc907a76f5d0)
+![image](assets/6.png)
 
 ## Task 3: An API to fetch SS for salary over the entire dataset. You can ignore the currency (if not
 mentioned otherwise) of the salary and simply treat salary as a number.
-![image](https://github.com/chaitak-gorai/pw_assignment/assets/77141674/ff35f7d8-be41-40ea-bb76-c09b03f1a244)
+![image](assets/7.png)
 
 Core logic:
 ```
@@ -130,7 +130,7 @@ Here i have used the aggregate function of mongoose to calculate the mean, min, 
 - So when SS is requrired we can fetch it in O(1) constant time.
 
 ## Task 4:  An API to fetch SS for salary for records which satisfy "on_contract": "true".
-![image](https://github.com/chaitak-gorai/pw_assignment/assets/77141674/f661b063-51dd-47aa-a690-731aa773df5f)
+![image](assets/8.png)
 
 Core logic:
 ```
@@ -154,7 +154,7 @@ Used the aggregrate function with `match` here the on_contract key is matched fo
 Here also can use the alternate solution of storing different variable of the total salary count for on_contract employess.
 
 ## Task 5: An API to fetch SS for salary for each department.  
-![image](https://github.com/chaitak-gorai/pw_assignment/assets/77141674/b843e817-95a5-4747-9368-af55e96ac10c)
+![image](assets/9.png)
 
 Core Logic:
 ```
@@ -172,7 +172,7 @@ Core Logic:
 Here the data is grouped by department key and the SS for each department is returned.
 
 ## Task 6: An API to fetch SS for salary for each department and sub-department combination.
-![image](https://github.com/chaitak-gorai/pw_assignment/assets/77141674/98bca892-00f7-4a6e-a488-95e88310af54)
+![image](assets/10.png)
 
 Core Logic:
 ```
